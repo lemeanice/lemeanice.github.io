@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notification Prompt System | Lenice Lim</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<script src="js/nav.js"></script>
+<script>injectNav('work');</script>
+
+<div class="breadcrumb">
+  <a href="work.html">← Work</a>
+  <span>/</span>
+  <span class="current">Notification Prompt System</span>
+</div>
+
+<!-- Hero -->
+<div class="cs-hero">
+  <div class="cs-eyebrow">Shopee · Product Manager</div>
+  <h1 class="cs-title">Notification Prompt System</h1>
+  <p class="cs-summary">A large portion of Shopee users had device notifications turned off, meaning we couldn't reach them at all. We needed a way to win back those permissions, at scale, without annoying the users who never wanted to grant them in the first place.</p>
+  <div class="cs-meta">
+    <div class="cs-meta-item"><b>My role</b>Product Manager</div>
+    <div class="cs-meta-item"><b>Team</b>Design, Engineering, Data</div>
+    <div class="cs-meta-item"><b>Scope</b>Southeast Asia, 5 markets</div>
+    <div class="cs-meta-item"><b>Status</b>Shipped</div>
+  </div>
+</div>
+
+<!-- Outcomes -->
+<div class="outcome-banner">
+  <div class="ob-item">
+    <div class="ob-num">+1.58–5.13pp</div>
+    <div class="ob-label">Device notification permission opt-in uplift (varies by market)</div>
+  </div>
+  <div class="ob-item">
+    <div class="ob-num">~7.29M</div>
+    <div class="ob-label">Users reached in the first week of rollout</div>
+  </div>
+  <div class="ob-item">
+    <div class="ob-num">5 surfaces</div>
+    <div class="ob-label">Prompt placements across the app (Noti Tab, Me Page, OSP, CS, Settings)</div>
+  </div>
+</div>
+
+<!-- Background -->
+<div class="cs-section">
+  <div class="s-label">Background</div>
+  <div class="s-title">You can't re-engage users you can't reach</div>
+  <div class="s-body">
+    <p>Push notifications are one of Shopee's core re-engagement channels. But a significant proportion of users had their device notification permissions turned off. Either they denied the permission during onboarding or turned it off at some point after.</p>
+    <p>Once a user has denied device permissions, the app can't send push notifications to them at all. The only way to recover those permissions is to prompt the user to go into their device settings and re-enable them, which is a high-friction ask.</p>
+    <p>The challenge was figuring out when, where, and how often to show that prompt. Too aggressive and users would permanently dismiss it. Too passive and the problem wouldn't move.</p>
+  </div>
+</div>
+
+<!-- Problems -->
+<div class="cs-section">
+  <div class="s-label">The problems we defined</div>
+  <div class="s-title">A recovery problem with a UX constraint</div>
+  <div class="grid-2 mt16">
+    <div class="problem-card">
+      <div class="problem-num">01</div>
+      <div class="problem-title">No way to re-engage at scale</div>
+      <div class="problem-desc">Without device notification permissions, Shopee couldn't push re-engagement messages to a large portion of its user base. This was a silent, growing gap.</div>
+    </div>
+    <div class="problem-card">
+      <div class="problem-num">02</div>
+      <div class="problem-title">Prompt fatigue is real</div>
+      <div class="problem-desc">If we showed the prompt too often or too aggressively, users would permanently dismiss it. We needed a cooldown strategy that balanced reach with respect for user attention.</div>
+    </div>
+  </div>
+</div>
+
+<!-- Solutions -->
+<div class="cs-section">
+  <div class="s-label">What we built</div>
+  <div class="s-title">A multi-surface prompt system with smart cooldown logic</div>
+  <div class="s-body" style="margin-bottom: 20px;">
+    <p>We built a notification prompt capability that could appear across five surfaces inside the app. Each placement was chosen because it was a moment where the user was already engaged and the prompt felt relevant rather than intrusive.</p>
+  </div>
+
+  <div class="grid-3 mt16">
+    <div class="sol-card">
+      <div class="sol-tag">Surface 01</div>
+      <div class="sol-title">Notifications Tab</div>
+      <div class="sol-desc">A prompt shown on the notifications tab when the user has permissions off, making it the most contextually relevant placement since they're already on the notification page.</div>
+    </div>
+    <div class="sol-card">
+      <div class="sol-tag">Surface 02</div>
+      <div class="sol-title">Me Page (Profile)</div>
+      <div class="sol-desc">A gentle banner on the Me page, where users often go to manage account settings. Natural place to surface a settings-related prompt.</div>
+    </div>
+    <div class="sol-card">
+      <div class="sol-tag">Surface 03</div>
+      <div class="sol-title">Order Status Page</div>
+      <div class="sol-desc">Shown on order status pages, where users are already motivated to want updates. "Get notified when your order ships" is a compelling ask in this context.</div>
+    </div>
+    <div class="sol-card">
+      <div class="sol-tag">Surface 04</div>
+      <div class="sol-title">Customer Service</div>
+      <div class="sol-desc">Appears during CS interactions, a moment when users have an active issue and notifications feel directly useful rather than promotional.</div>
+    </div>
+    <div class="sol-card">
+      <div class="sol-tag">Surface 05</div>
+      <div class="sol-title">Notification Settings</div>
+      <div class="sol-desc">A prompt within the notification settings page itself, for users who navigate there intentionally and may be open to re-enabling.</div>
+    </div>
+    <div class="sol-card">
+      <div class="sol-tag">Cooldown logic</div>
+      <div class="sol-title">Dismiss-based frequency cap</div>
+      <div class="sol-desc">After 4 dismissals without action, the prompt stops appearing. This was the recommended strategy because users who dismiss repeatedly have made their preference clear.</div>
+    </div>
+  </div>
+</div>
+
+<!-- Test and decision -->
+<div class="cs-section">
+  <div class="s-label">The test</div>
+  <div class="s-title">AABCD test across all 5 markets</div>
+  <div class="s-body">
+    <p>We ran an AABCD test to evaluate different prompt strategies. The treatment groups varied in how aggressively the prompt was shown and when the cooldown kicked in.</p>
+    <p>The key question wasn't just "which group gets more opt-ins." It was "which group gets more opt-ins without generating a downstream drop in engagement or satisfaction." Winning permissions from users who then immediately turn them off again isn't a real win.</p>
+    <p>We recommended Group B (cooldown after 4 dismissals) because there was no statistically significant difference in opt-in rates between more aggressive and less aggressive groups, meaning there was no upside to being pushier and a clear reputational downside if we got it wrong.</p>
+  </div>
+</div>
+
+<!-- Results -->
+<div class="cs-section">
+  <div class="s-label">Results</div>
+  <div class="s-title">Real permission recovery, at scale</div>
+  <div>
+    <div class="result-row">
+      <div class="result-num" style="color: #1a6e3c;">+1.58–5.13pp</div>
+      <div class="result-desc">Device notification permission opt-in uplift across markets. Strongest in Thailand (+5.13pp), where baseline opt-in rates were lower.</div>
+    </div>
+    <div class="result-row">
+      <div class="result-num" style="color: #1a6e3c;">~7.29M users</div>
+      <div class="result-desc">Reached in the first week post-launch. The scale confirmed there was real addressable reach we hadn't been tapping.</div>
+    </div>
+    <div class="result-row">
+      <div class="result-num">Group B</div>
+      <div class="result-desc">Recommended strategy: cooldown after 4 dismissals. No significant uplift difference vs more aggressive strategies, but meaningfully lower risk of prompt fatigue.</div>
+    </div>
+  </div>
+</div>
+
+<!-- Reflection -->
+<div class="cs-section">
+  <div class="s-label">Reflection</div>
+  <div class="s-title">The decision behind recommending the gentler strategy</div>
+  <div class="s-body">
+    <p>The most interesting debate on this project was whether to recommend the more aggressive prompt strategy. The data showed no significant difference in opt-in rates between groups, which meant the aggressive version wasn't actually better at recovering permissions. It just showed the prompt more.</p>
+    <p>That made the decision easy from a data standpoint. But it's worth noting that when there's no clear winner in an ABT, the right call isn't always "ship the control." In this case, recommending the least-interruptive strategy was the right call precisely because the downside of getting it wrong (users blocking all notification prompts permanently) was much worse than the upside of squeezing out a marginal improvement.</p>
+    <p>This is a pattern I think about a lot in product decisions: when the expected value of options is similar, default to the one with the lower worst-case outcome.</p>
+  </div>
+</div>
+
+<script>injectFooter();</script>
+</body>
+</html>

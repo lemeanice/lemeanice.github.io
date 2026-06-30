@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PropertyGuru Heuristic Evaluation | Lenice Lim</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<script src="js/nav.js"></script>
+<script>injectNav('work');</script>
+
+<div class="breadcrumb">
+  <a href="work.html">← Work</a>
+  <span>/</span>
+  <span class="current">PropertyGuru Heuristic Evaluation</span>
+</div>
+
+<div class="cs-hero">
+  <div class="cs-eyebrow">SMU · UX Research · Earlier work</div>
+  <h1 class="cs-title">PropertyGuru Heuristic Evaluation</h1>
+  <p class="cs-summary">An academic usability evaluation of the PropertyGuru app using Nielsen's heuristics. Focused on three heuristics where we found the most meaningful gaps between user expectation and experience.</p>
+  <div class="cs-meta">
+    <div class="cs-meta-item"><b>My role</b>UX researcher</div>
+    <div class="cs-meta-item"><b>Method</b>Nielsen heuristic evaluation</div>
+    <div class="cs-meta-item"><b>Context</b>University coursework</div>
+  </div>
+</div>
+
+<div class="cs-section">
+  <div class="s-label">Heuristic 1</div>
+  <div class="s-title">Visibility of system status</div>
+  <div class="s-body">
+    <p>PropertyGuru showed inconsistent feedback during loading states. When a search took longer than expected, the app gave no indication of progress: no spinner, no skeleton state, no estimated wait. Users couldn't tell if the search was still running or had stalled.</p>
+    <p>Severity: High. For a property search app where queries can be slow (especially with filters applied), the lack of visible system status directly affects user trust and patience.</p>
+    <p>Recommendation: Add skeleton loading states for search results. Show a subtle progress indicator when filters are being applied. Use optimistic UI where possible to reduce perceived wait time.</p>
+  </div>
+</div>
+
+<div class="cs-section">
+  <div class="s-label">Heuristic 2</div>
+  <div class="s-title">Consistency and standards</div>
+  <div class="s-body">
+    <p>The app used inconsistent interaction patterns across different listing types. Tapping a listing card on the search results page opened a full detail view, but tapping a similar card in the saved listings section opened a preview overlay. Users expected the same tap target to behave the same way regardless of where they were.</p>
+    <p>Severity: Medium. The inconsistency created mild confusion and a sense that the app hadn't been designed as a whole. Users had to relearn the navigation pattern in each section.</p>
+    <p>Recommendation: Standardise tap-to-open behaviour across all listing card types. If a preview overlay is used in one context, apply it consistently or replace it with the full detail view pattern.</p>
+  </div>
+</div>
+
+<div class="cs-section">
+  <div class="s-label">Heuristic 3</div>
+  <div class="s-title">Recognition over recall</div>
+  <div class="s-body">
+    <p>The filter system required users to remember which filters they had applied and navigate to a separate filters page to modify them. Active filters weren't visually surfaced on the results page, so users who wanted to remove one filter had to re-open the full filters view.</p>
+    <p>Severity: High. Property searches are highly specific and iterative. Users typically apply several filters and expect to refine them easily. Forcing them to recall and re-navigate to their filter state creates friction in the core search loop.</p>
+    <p>Recommendation: Surface active filters as removable chips below the search bar on the results page. Allow one-tap removal without opening the full filters panel.</p>
+  </div>
+</div>
+
+<script>injectFooter();</script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Design Delights | Lenice Lim</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .delight-card {
+      background: var(--bg);
+      border: 0.5px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: border-color 0.15s;
+    }
+    .delight-card:hover { border-color: var(--border-2); }
+    .delight-img {
+      width: 100%;
+      height: 160px;
+      background: var(--bg-2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 48px;
+      border-bottom: 0.5px solid var(--border);
+    }
+    .delight-body { padding: 16px 18px 18px; }
+    .delight-cat {
+      font-size: 10px;
+      font-weight: 600;
+      color: var(--text-3);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+    }
+    .delight-title { font-size: 14px; font-weight: 500; margin-bottom: 7px; }
+    .delight-body p { font-size: 12px; color: var(--text-2); line-height: 1.65; }
+  </style>
+</head>
+<body>
+<script src="js/nav.js"></script>
+<script>injectNav('design-delights');</script>
+
+<section class="section">
+  <div class="sec-label">Design Delights</div>
+  <div class="sec-title">Small details worth noticing</div>
+  <p class="sec-sub">I pay a lot of attention to design choices that most people scroll past. These are the ones that made me stop and think: logos, interactions, UI patterns that get the little things exactly right (or interestingly wrong).</p>
+
+  <div class="grid-3">
+
+    <div class="delight-card">
+      <div class="delight-img">🛗</div>
+      <div class="delight-body">
+        <div class="delight-cat">Interaction design</div>
+        <div class="delight-title">The close button on elevator panels</div>
+        <p>The "door close" button on most elevators is purely a placebo. Studies have shown it rarely does anything. Yet designers keep it. It turns out giving users something to press when they feel impatient is genuinely better UX than leaving them with nothing. Sometimes the right design decision isn't the most honest one.</p>
+      </div>
+    </div>
+
+    <div class="delight-card">
+      <div class="delight-img">🍎</div>
+      <div class="delight-body">
+        <div class="delight-cat">Logo design</div>
+        <div class="delight-title">Apple's logo bite</div>
+        <p>The bite in Apple's logo is there so it reads as an apple and not a cherry at small sizes. That's it. The whole thing is a legibility decision. What I love about it is that it looks like a stylistic flourish but was actually a functional fix, good design that hides its own reasoning.</p>
+      </div>
+    </div>
+
+    <div class="delight-card">
+      <div class="delight-img">⏳</div>
+      <div class="delight-body">
+        <div class="delight-cat">Perception</div>
+        <div class="delight-title">Progress bars that lie (helpfully)</div>
+        <p>A progress bar that accelerates at the end feels faster than one that moves at a constant rate, even if they take the same amount of time. Airlines figured this out, and some flight trackers show the plane speeding up on approach. Users perceive the experience as snappier even when nothing is technically different.</p>
+      </div>
+    </div>
+
+    <div class="delight-card">
+      <div class="delight-img">🔵</div>
+      <div class="delight-body">
+        <div class="delight-cat">Typography</div>
+        <div class="delight-title">The negative space in the FedEx logo</div>
+        <p>There's an arrow hidden in the space between the E and x in FedEx. Once you see it, you can't unsee it. What I find interesting is that it's not obvious (most people never notice it), but it adds a quiet layer of meaning (speed, forward motion) that works even when unnoticed. Invisible intentionality.</p>
+      </div>
+    </div>
+
+    <div class="delight-card">
+      <div class="delight-img">📱</div>
+      <div class="delight-body">
+        <div class="delight-cat">Mobile UX</div>
+        <div class="delight-title">Thumb-zone design on long scrolls</div>
+        <p>The bottom third of a phone screen is where thumbs naturally rest. Any action you want users to take quickly, like a floating cart button, a back swipe, or a pull-up sheet, works better when it lives there. The apps that feel effortless are usually the ones where every tap target is quietly sitting in thumb range.</p>
+      </div>
+    </div>
+
+    <div class="delight-card">
+      <div class="delight-img">🌀</div>
+      <div class="delight-body">
+        <div class="delight-cat">Micro-interaction</div>
+        <div class="delight-title">Pull-to-refresh as a reset ritual</div>
+        <p>Pull-to-refresh doesn't just reload content. It gives users a sense of control when they feel stuck. The physical gesture (pulling down, releasing) mirrors the mental act of "starting fresh." It's one of those interactions that's technically just a refresh, but emotionally it's more than that. Users pull to refresh even when they know nothing has changed.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>injectFooter();</script>
+</body>
+</html>

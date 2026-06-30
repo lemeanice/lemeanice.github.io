@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Switch Account Redesign | Lenice Lim</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<script src="js/nav.js"></script>
+<script>injectNav('work');</script>
+
+<div class="breadcrumb">
+  <a href="work.html">← Work</a>
+  <span>/</span>
+  <span class="current">Switch Account Redesign</span>
+</div>
+
+<!-- Hero -->
+<div class="cs-hero">
+  <div class="cs-eyebrow">Shopee · Product Manager · Outstanding Project Award</div>
+  <h1 class="cs-title">Switch Account Redesign</h1>
+  <p class="cs-summary">A surprising chunk of users were logging out and logging back in on the same device, generating unnecessary OTP costs each time. We dug into the data, found the root cause, and redesigned the logout and account-switching flow to fix it.</p>
+  <div class="cs-meta">
+    <div class="cs-meta-item"><b>My role</b>Product Manager</div>
+    <div class="cs-meta-item"><b>Team</b>Design, Engineering, Data</div>
+    <div class="cs-meta-item"><b>Scope</b>Southeast Asia</div>
+    <div class="cs-meta-item"><b>Award</b>Outstanding Project Award</div>
+  </div>
+</div>
+
+<!-- Outcomes -->
+<div class="outcome-banner">
+  <div class="ob-item">
+    <div class="ob-num">-40.34%</div>
+    <div class="ob-label">Reduction in login OTP costs</div>
+  </div>
+  <div class="ob-item">
+    <div class="ob-num">Outstanding</div>
+    <div class="ob-label">Project Award, recognised internally for business impact</div>
+  </div>
+  <div class="ob-item">
+    <div class="ob-num">Same-device</div>
+    <div class="ob-label">Root cause: most logouts were same-device account switches, not security-motivated</div>
+  </div>
+</div>
+
+<!-- Background -->
+<div class="cs-section">
+  <div class="s-label">Background</div>
+  <div class="s-title">A cost problem hiding in a login flow</div>
+  <div class="s-body">
+    <p>OTP (one-time password) login costs are real. Every time a user logs in via OTP, there's a cost associated with sending that SMS. Most of the time that's expected. It's how authentication works.</p>
+    <p>But when we looked at the data, we noticed something odd: a large proportion of OTP logins were coming from users who had just logged out on the same device, often within a very short time window. This wasn't a security action. These users weren't doing anything security-sensitive. They were switching accounts.</p>
+    <p>In markets where multiple people share devices, or where users maintain separate buyer and seller accounts, switching between accounts was a common need. But because the switch account feature wasn't intuitive or well-surfaced, users were using the logout button as a workaround and re-logging in via OTP to the other account.</p>
+  </div>
+</div>
+
+<!-- Problems -->
+<div class="cs-section">
+  <div class="s-label">The problems we defined</div>
+  <div class="s-title">A UX gap driving unnecessary cost</div>
+  <div class="grid-2 mt16">
+    <div class="problem-card">
+      <div class="problem-num">01</div>
+      <div class="problem-title">Switch account was hard to find</div>
+      <div class="problem-desc">Users who wanted to switch accounts couldn't easily find the feature. The logout button was more visible, so they used that instead, triggering a full OTP re-login.</div>
+    </div>
+    <div class="problem-card">
+      <div class="problem-num">02</div>
+      <div class="problem-title">Logout was doing double duty</div>
+      <div class="problem-desc">The logout button was being used as a proxy for account switching. This generated OTP requests that weren't necessary and was a worse user experience than a proper switch flow.</div>
+    </div>
+  </div>
+</div>
+
+<!-- Solutions -->
+<div class="cs-section">
+  <div class="s-label">What we built</div>
+  <div class="s-title">A unified Switch Account flow that handles both use cases</div>
+  <div class="s-body" style="margin-bottom: 20px;">
+    <p>The core design decision was to remove the standalone logout button from the main account settings and replace it with a single "Switch Account / Log out" entry point. This unified flow lets users switch to a saved account (no OTP needed) or fully log out, but it presents switching as the default action first.</p>
+  </div>
+
+  <div class="grid-2 mt16">
+    <div class="sol-card">
+      <div class="sol-tag">UX change</div>
+      <div class="sol-title">Unified Switch Account / Logout flow</div>
+      <div class="sol-desc">Replaced the separate logout button with a single entry point. The page surfaces saved accounts first, so switching is one tap with no OTP. Full logout is still available but as a secondary action.</div>
+    </div>
+    <div class="sol-card">
+      <div class="sol-tag">Page redesign</div>
+      <div class="sol-title">Redesigned switch account page</div>
+      <div class="sol-desc">The switch account page was redesigned to be cleaner and faster: saved accounts are shown clearly, adding a new account is easy, and the flow completes in fewer steps.</div>
+    </div>
+  </div>
+
+  <div style="background: #FFF8E8; border: 0.5px solid #f0d89a; border-radius: 10px; padding: 16px 18px; margin-top: 20px;">
+    <div style="font-size: 11px; font-weight: 600; color: #8a6a00; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.07em;">Design tradeoff</div>
+    <div style="font-size: 13px; color: var(--text-2); line-height: 1.65;">Removing the standalone logout button is a bold call. Users who genuinely want to log out (for privacy or security reasons) need to take one more step. We accepted this tradeoff because the data showed the vast majority of logouts were account-switch attempts, not security-motivated logouts. We also kept a clear "Log out" option within the unified flow. It's not hidden, just repositioned.</div>
+  </div>
+</div>
+
+<!-- Results -->
+<div class="cs-section">
+  <div class="s-label">Results</div>
+  <div class="s-title">Meaningful cost reduction, clean user signal</div>
+  <div>
+    <div class="result-row">
+      <div class="result-num" style="color: #1a6e3c;">-40.34%</div>
+      <div class="result-desc">Reduction in login OTP costs. Users who previously logged out and re-authenticated via OTP now switch accounts in one tap instead.</div>
+    </div>
+    <div class="result-row">
+      <div class="result-num">Outstanding</div>
+      <div class="result-desc">Received Outstanding Project Award, recognised for combining a clear business case with a clean UX solution.</div>
+    </div>
+    <div class="result-row">
+      <div class="result-num">No regression</div>
+      <div class="result-desc">Full logout completion rate stayed stable. Repositioning the logout action didn't hurt users who genuinely needed it.</div>
+    </div>
+  </div>
+</div>
+
+<!-- Reflection -->
+<div class="cs-section">
+  <div class="s-label">Reflection</div>
+  <div class="s-title">What made this project click</div>
+  <div class="s-body">
+    <p>This one worked because the data told a very specific story. It wasn't "OTP costs are high, let's investigate." It was "here is a pattern in the data that looks weird, and when you follow it, the root cause is obvious." That kind of targeted data analysis made the problem easy to frame and the solution easy to justify.</p>
+    <p>The trickiest part was the internal conversation around removing the logout button. It felt like a drastic change. What helped was being precise about what we were actually removing: a shortcut that most users were using incorrectly. The logout action wasn't going away. It was just being moved to the right context.</p>
+    <p>I also learned that "Outstanding Project Award" projects aren't always the biggest or most complex ones. Sometimes they're the ones where you find a clean data signal, make a clear case, and execute a focused change. The size of the win matters less than the quality of the reasoning behind it.</p>
+  </div>
+</div>
+
+<script>injectFooter();</script>
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Noti Page Revamp | Lenice Lim</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<script src="js/nav.js"></script>
+<script>injectNav('work');</script>
+
+<div class="breadcrumb">
+  <a href="work.html">← Work</a>
+  <span>/</span>
+  <span class="current">Noti Page Revamp</span>
+</div>
+
+<!-- Hero -->
+<div class="cs-hero">
+  <div class="cs-eyebrow">Shopee · Product Manager</div>
+  <h1 class="cs-title">Noti Page Revamp</h1>
+  <p class="cs-summary">The notifications page had a layout problem that was quietly hurting both users and the business. Order updates were hard to find, non-order promotions were getting ignored, and the folder structure wasn't built to scale. We rethought the whole page.</p>
+  <div class="cs-meta">
+    <div class="cs-meta-item"><b>My role</b>Product Manager (solo PM)</div>
+    <div class="cs-meta-item"><b>Team</b>Design, Engineering, Data</div>
+    <div class="cs-meta-item"><b>Scope</b>Southeast Asia, 5 markets</div>
+    <div class="cs-meta-item"><b>Status</b>Shipped</div>
+  </div>
+</div>
+
+<!-- Outcomes -->
+<div class="outcome-banner">
+  <div class="ob-item">
+    <div class="ob-num">+34–85%</div>
+    <div class="ob-label">Uplift in promo notification clicks across markets</div>
+  </div>
+  <div class="ob-item">
+    <div class="ob-num">+2.01%</div>
+    <div class="ob-label">GMV per user growth in key treatment groups</div>
+  </div>
+  <div class="ob-item">
+    <div class="ob-num">Stable</div>
+    <div class="ob-label">Order notification engagement with no regression</div>
+  </div>
+</div>
+
+<!-- Background -->
+<div class="cs-section">
+  <div class="s-label">Background</div>
+  <div class="s-title">The notification page was doing too many things, badly</div>
+  <div class="s-body">
+    <p>Shopee's notification page is where users go after they get a push notification. It's a high-traffic surface where people land daily to check order updates, see what promotions are active, and find anything else the app wants to tell them.</p>
+    <p>The problem was the structure. Notifications were grouped into folders (Orders, Promotions, etc.), but the design made it hard to tell at a glance which folder had new updates. Order status updates, which users care about most, weren't visually surfaced. And the folder tabs weren't built for the new types of content the team wanted to introduce.</p>
+    <p>Underneath the UX problem was a business problem: the page was underperforming as an engagement surface. Non-order promotional notifications were getting low click-through rates. A large portion of the addressable reach wasn't converting.</p>
+  </div>
+</div>
+
+<!-- Problems -->
+<div class="cs-section">
+  <div class="s-label">The problems we defined</div>
+  <div class="s-title">Three things that needed to change</div>
+  <div class="grid-3 mt16">
+    <div class="problem-card">
+      <div class="problem-num">01</div>
+      <div class="problem-title">Order visibility was low</div>
+      <div class="problem-desc">Users landing on the page couldn't immediately see their latest order status. They had to hunt for it inside a folder.</div>
+    </div>
+    <div class="problem-card">
+      <div class="problem-num">02</div>
+      <div class="problem-title">Promo reach wasn't being activated</div>
+      <div class="problem-desc">The non-order promotional notifications had low AR (addressable reach) engagement. The layout wasn't giving them any visual priority.</div>
+    </div>
+    <div class="problem-card">
+      <div class="problem-num">03</div>
+      <div class="problem-title">The folder structure couldn't scale</div>
+      <div class="problem-desc">We wanted to introduce new notification types, but the existing tab/folder design wasn't built to accommodate them cleanly.</div>
+    </div>
+  </div>
+
+  <img src="assets/images/noti/business-03.png" alt="Current page vs new skeleton design" class="slide-img">
+  <div class="slide-caption">Current layout vs proposed new skeleton, with order update card always visible at top</div>
+</div>
+
+<!-- Solutions -->
+<div class="cs-section">
+  <div class="s-label">What we built</div>
+  <div class="s-title">Four changes to the notification experience</div>
+
+  <div class="grid-2 mt16">
+    <div class="sol-card">
+      <div class="sol-tag">01 · Order visibility</div>
+      <div class="sol-title">Persistent order update card</div>
+      <div class="sol-desc">The latest order status is now always visible at the top of the page with no folder needed. Users landing from any push notification can see their order at a glance.</div>
+    </div>
+
+    <div class="sol-card ai">
+      <div class="sol-tag">
+        02 · Personalisation
+        <span class="tag-ai">✦ AI-powered</span>
+      </div>
+      <div class="sol-title">Top Picks feed</div>
+      <div class="sol-desc">A new AI-curated section that surfaces product recommendations personalised to each user. Top Picks pulls from Shopee's recommendation engine to show items the user is most likely to engage with, turning the notification page into a light discovery surface.</div>
+    </div>
+
+    <div class="sol-card">
+      <div class="sol-tag">03 · Tab redesign</div>
+      <div class="sol-title">Restructured notification tabs</div>
+      <div class="sol-desc">Redesigned the tab structure so notification types sit more logically. Cleaner visual separation between order updates, promotions, and other notification types.</div>
+    </div>
+
+    <div class="sol-card">
+      <div class="sol-tag">04 · More AR components</div>
+      <div class="sol-title">Expanded promotional real estate</div>
+      <div class="sol-desc">Added more addressable reach (AR) content components to the page layout, giving promotional notifications better surface area to convert.</div>
+    </div>
+  </div>
+
+  <img src="assets/images/noti/business-04.png" alt="Order update card design" class="slide-img mt20">
+  <div class="slide-caption">Order update card, always visible, shows latest status at a glance</div>
+
+  <img src="assets/images/noti/business-06.png" alt="Tab design before and after" class="slide-img mt20">
+  <div class="slide-caption">Tab redesign: before and after</div>
+
+  <img src="assets/images/noti/business-07.png" alt="Top Picks AI-powered feature" class="slide-img mt20">
+  <div class="slide-caption">Top Picks, an AI-powered personalised feed on the notifications page</div>
+</div>
+
+<!-- Results -->
+<div class="cs-section">
+  <div class="s-label">Results</div>
+  <div class="s-title">What the A/B tests showed</div>
+  <div class="s-body" style="margin-bottom: 20px;">
+    <p>The test ran across five Southeast Asian markets. Results varied by market and treatment group; the range below reflects that spread.</p>
+  </div>
+  <div>
+    <div class="result-row">
+      <div class="result-num" style="color: #1a6e3c;">+34% to +85%</div>
+      <div class="result-desc">Uplift in promo notification click-through rate. The range reflects variance across markets, with the strongest uplift in markets with lower baseline engagement.</div>
+    </div>
+    <div class="result-row">
+      <div class="result-num" style="color: #1a6e3c;">+2.01%</div>
+      <div class="result-desc">GMV per user growth in key treatment groups, a meaningful business signal beyond just clicks.</div>
+    </div>
+    <div class="result-row">
+      <div class="result-num">Stable</div>
+      <div class="result-desc">Order notification engagement held steady. The redesign didn't come at the cost of the core use case.</div>
+    </div>
+  </div>
+</div>
+
+<!-- Reflection -->
+<div class="cs-section">
+  <div class="s-label">Reflection</div>
+  <div class="s-title">What I'd do differently</div>
+  <div class="s-body">
+    <p>The biggest tension in this project was between order utility and promo engagement. These two goals pull in different directions: users want fast order updates, and the business wants promotional reach. We had to sequence the design so we didn't sacrifice one for the other.</p>
+    <p>If I were starting over, I'd have pushed to run a smaller test earlier. We spent a lot of time debating layout before we had any data. A lightweight A/B on just the order card position would have given us a faster signal and built more internal confidence before the full redesign.</p>
+    <p>The Top Picks feature was a bet I'm glad we made. It felt like a stretch at the time, adding a discovery surface to a utility page, but the data justified it. AI-powered personalisation on a high-traffic page like this has a surprisingly low bar to clear.</p>
+  </div>
+</div>
+
+<script>injectFooter();</script>
+</body>
+</html>
