@@ -520,3 +520,27 @@ img { display: block; max-width: 100%; }
   .about-avatar { width: 64px; height: 64px; }
   .result-num { font-size: 16px; min-width: 110px; }
 }
+
+/* ── TikTok text list (work.html) ── */
+.tiktok-list { display: flex; flex-direction: column; gap: 0; border: 0.5px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+.tt-item { padding: 18px 22px; border-bottom: 0.5px solid var(--border); }
+.tt-item:last-child { border-bottom: none; }
+.tt-title { font-size: 14px; font-weight: 500; margin-bottom: 5px; }
+.tt-desc { font-size: 13px; color: var(--text-2); line-height: 1.6; margin-bottom: 10px; }
+
+/* ── Wireframe mockup blocks (work-noti.html) ── */
+.wireframe-block { background: var(--bg-2); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 24px; }
+.wf-pair { display: flex; gap: 24px; align-items: flex-start; }
+.wf-col { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.wf-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-3); }
+.wf-phone { background: var(--bg); border: 1px solid var(--border); border-radius: 12px; padding: 14px; width: 170px; min-height: 180px; display: flex; flex-direction: column; gap: 6px; }
+.wf-tab-row { display: flex; gap: 6px; margin-bottom: 8px; }
+.wf-tab { font-size: 10px; padding: 3px 8px; border-radius: 20px; border: 0.5px solid var(--border); color: var(--text-3); }
+.wf-tab.active { background: var(--text); color: var(--bg); border-color: var(--text); }
+.wf-row { height: 8px; background: var(--border); border-radius: 4px; margin-bottom: 0; }
+.wf-sm { height: 7px; }
+.wf-order-card { display: flex; align-items: center; gap: 8px; padding: 8px 10px; background: #f6faf8; border: 0.5px solid #b2dfc8; border-radius: 8px; margin-bottom: 8px; }
+.wf-order-icon { font-size: 16px; }
+.wf-ar-row { display: flex; align-items: center; gap: 8px; padding: 8px 0; border-bottom: 0.5px solid var(--border); }
+.wf-ar-thumb { width: 36px; height: 36px; border-radius: 6px; background: var(--border); flex-shrink: 0; }
+.wf-caption { margin-top: 16px; font-size: 13px; color: var(--text-2); line-height: 1.65; border-top: 0.5px solid var(--border); padding-top: 14px; }
