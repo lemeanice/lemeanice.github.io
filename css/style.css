@@ -371,6 +371,38 @@ img { display: block; max-width: 100%; }
   margin-top: 7px;
   text-align: center;
 }
+/* ── PHONE SCREENSHOT PAIR ── */
+.phone-pair {
+  display: flex;
+  gap: 20px;
+  margin-top: 24px;
+  justify-content: center;
+  align-items: flex-start;
+}
+.phone-pair-item {
+  flex: 1;
+  max-width: 280px;
+  text-align: center;
+}
+.phone-pair-item img {
+  width: 100%;
+  border-radius: 16px;
+  border: 0.5px solid var(--border);
+  display: block;
+}
+.phone-pair-label {
+  font-size: 11px;
+  color: var(--text-3);
+  margin-top: 7px;
+}
+.phone-pair-tag {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  margin-bottom: 8px;
+}
 
 /* ── EARLIER WORK ── */
 .earlier-card {
