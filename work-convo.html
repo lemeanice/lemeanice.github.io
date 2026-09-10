@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conversational Notification Admin | Lenice Lim</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<script src="js/nav.js"></script>
+<script>injectNav('work');</script>
+
+<div class="breadcrumb">
+  <a href="work.html">← Work</a>
+  <span>/</span>
+  <span class="current">Conversational Notification Admin</span>
+</div>
+
+<!-- Hero -->
+<div class="cs-hero">
+  <div class="cs-eyebrow">Shopee · Product Manager <span class="tag-ai">✦ AI product</span></div>
+  <h1 class="cs-title">Conversational Notification Admin</h1>
+  <p class="cs-summary">Managing notifications internally means a separate admin UI and integration for every channel. I'm the sole PM on a small AI-native squad rebuilding that as a single conversational interface, where each new notification type becomes a "skill" the assistant learns instead of another tool to build. This is an internal, in-progress project, so the details here are kept high level.</p>
+  <div class="cs-meta">
+    <div class="cs-meta-item"><b>My role</b>Sole PM (only non-engineering role)</div>
+    <div class="cs-meta-item"><b>Team</b>2-person AI-native squad</div>
+    <div class="cs-meta-item"><b>Scope</b>Internal notification tooling</div>
+    <div class="cs-meta-item"><b>Status</b>In progress · internal testing</div>
+  </div>
+</div>
+
+<!-- Background -->
+<div class="cs-section">
+  <div class="s-label">Background</div>
+  <div class="s-title">One interface instead of one tool per channel</div>
+  <div class="s-body">
+    <p>Setting up notifications internally today means working across a patchwork of admin screens and integrations, roughly one per notification channel. Every new notification type carries a real cost: more UI, more backend wiring, more surface area to maintain.</p>
+    <p>The bet behind this project is that a conversational interface collapses that cost. Instead of building a new screen for each channel, the assistant "learns" a new notification type as a skill. The marginal cost of supporting the next channel drops toward the cost of teaching the assistant how it works.</p>
+  </div>
+</div>
+
+<!-- What I own -->
+<div class="cs-section">
+  <div class="s-label">What I own</div>
+  <div class="s-title">Defining the product as the only non-engineering voice</div>
+  <div class="grid-2 mt16">
+    <div class="sol-card">
+      <div class="sol-tag">Scope &amp; requirements</div>
+      <div class="sol-title">Deciding what "done" means</div>
+      <div class="sol-desc">Sole PM defining scope, requirements, and written exit conditions for a from-scratch product, on a team with no dedicated designer or QA. Features ship in small slices, each with an agreed exit bar before work starts.</div>
+    </div>
+
+    <div class="sol-card ai">
+      <div class="sol-tag">
+        Safety
+        <span class="tag-ai">✦ Human / AI boundary</span>
+      </div>
+      <div class="sol-title">Guardrails for a tool that can trigger real sends</div>
+      <div class="sol-desc">Owned the rules for where the assistant must not guess, where it has to show inferred vs. confirmed values, and a mandatory human-approval gate before anything is sent. The cost of a wrong send is real, so the boundary is explicit.</div>
+    </div>
+
+    <div class="sol-card">
+      <div class="sol-tag">Trade-offs</div>
+      <div class="sol-title">Sequencing and architecture calls</div>
+      <div class="sol-desc">Made and documented product trade-offs with engineering, including resequencing the roadmap to take on a harder notification queue earlier, and a two-environment split that balances build speed against the risk of sending from the wrong place.</div>
+    </div>
+
+    <div class="sol-card">
+      <div class="sol-tag">Stakeholders</div>
+      <div class="sol-title">Framing decisions for leadership</div>
+      <div class="sol-desc">Presented roadmap, risks, and open trade-offs to cross-functional leads through structured async decks, laying out options with explicit pros and cons rather than pre-baked recommendations.</div>
+    </div>
+  </div>
+</div>
+
+<!-- How the squad works -->
+<div class="cs-section">
+  <div class="s-label">How we work</div>
+  <div class="s-title">An AI-native squad, and the process to keep it honest</div>
+  <div class="s-body">
+    <p>The team runs lean and fast: features shipping daily, a single daily working session in place of standups and sprints, and very little heavyweight documentation. That speed is the point, but it creates its own risks, mostly around review capacity and losing the record of <em>why</em> decisions were made.</p>
+    <p>So I built light process to match. A dated decision register captures engineering calls and their rationale, replacing an ad hoc chat log that didn't scale past two people. I also spec'd an internal chat-ops assistant that adds state and search on top of our bug and improvement log, with a two-key close control (engineer fixes, PM verifies) to preserve a quality check even without a QA function.</p>
+  </div>
+</div>
+
+<!-- Where it's at -->
+<div class="cs-section">
+  <div class="s-label">Where it's at</div>
+  <div class="s-title">Phase 1 in internal testing</div>
+  <div class="s-body">
+    <p>I planned and ran the project's first live internal usability test with a regional PM. The session surfaced a critical bug and validated real demand for bulk task creation, which fed directly back into roadmap sequencing discussions with leadership.</p>
+    <p>It's still early. The work now is widening the exit bar from "works in test" to "works across the full environment chain," and designing for bulk, multi-item use up front rather than retrofitting it later. I'll add more here as the project matures.</p>
+  </div>
+</div>
+
+<script>injectFooter();</script>
+</body>
+</html>
