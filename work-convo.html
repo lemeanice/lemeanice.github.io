@@ -20,22 +20,45 @@
 <div class="cs-hero">
   <div class="cs-eyebrow">Shopee · Product Manager <span class="tag-ai">✦ AI product</span></div>
   <h1 class="cs-title">Conversational Notification Admin</h1>
-  <p class="cs-summary">Managing notifications internally means a separate admin UI and integration for every channel. I'm the sole PM on a small AI-native squad rebuilding that as a single conversational interface, where each new notification type becomes a "skill" the assistant learns instead of another tool to build. This is an internal, in-progress project, so the details here are kept high level.</p>
+  <p class="cs-summary">Setting up a notification internally today means a separate admin UI and integration for every channel. I'm the sole PM on a small AI-native squad rebuilding that as a single chatbot, where each channel becomes a "skill" the assistant runs instead of another tool to build and maintain. This is an internal, in-progress 0→1 project, so everything here is kept high level.</p>
   <div class="cs-meta">
-    <div class="cs-meta-item"><b>My role</b>Sole PM (only non-engineering role)</div>
-    <div class="cs-meta-item"><b>Team</b>2-person AI-native squad</div>
-    <div class="cs-meta-item"><b>Scope</b>Internal notification tooling</div>
-    <div class="cs-meta-item"><b>Status</b>In progress · internal testing</div>
+    <div class="cs-meta-item"><b>My role</b>Sole PM, part-time (only non-eng role)</div>
+    <div class="cs-meta-item"><b>Team</b>2-person AI-native squad (PM + 1 engineer)</div>
+    <div class="cs-meta-item"><b>Scope</b>Internal notification tooling, 0→1</div>
+    <div class="cs-meta-item"><b>Status</b>In build &amp; internal testing · not launched</div>
   </div>
 </div>
 
 <!-- Background -->
 <div class="cs-section">
-  <div class="s-label">Background</div>
-  <div class="s-title">One interface instead of one tool per channel</div>
+  <div class="s-label">The thesis</div>
+  <div class="s-title">One assistant that learns channels, instead of one tool per channel</div>
   <div class="s-body">
-    <p>Setting up notifications internally today means working across a patchwork of admin screens and integrations, roughly one per notification channel. Every new notification type carries a real cost: more UI, more backend wiring, more surface area to maintain.</p>
-    <p>The bet behind this project is that a conversational interface collapses that cost. Instead of building a new screen for each channel, the assistant "learns" a new notification type as a skill. The marginal cost of supporting the next channel drops toward the cost of teaching the assistant how it works.</p>
+    <p>The existing notification admin is really many admin tools stitched together, roughly one bespoke UI and API set per notification channel. Every new channel carries a real cost: more interface to build, more backend to wire up, more surface area to maintain forever.</p>
+    <p>The bet behind this project is that a conversational interface collapses that cost. Instead of shipping a new screen for each channel, the assistant learns a new notification type as a <em>skill</em> that reuses a shared core. The marginal cost of the next channel drops toward the cost of teaching the assistant how that channel works. Because it's a first-of-its-kind build for the team, I'm framing it as pioneering, early-stage work rather than a results story: there are no launch metrics to cite yet.</p>
+  </div>
+</div>
+
+<!-- The interface -->
+<div class="cs-section">
+  <div class="s-label">The shape of it</div>
+  <div class="s-title">A chat-centred workspace, not a form</div>
+  <div class="grid-3 mt16">
+    <div class="problem-card">
+      <div class="problem-num">01</div>
+      <div class="problem-title">Conversation in the middle</div>
+      <div class="problem-desc">The operator sets a task up by talking to the assistant, guided by entry points for the core actions but reachable by just typing.</div>
+    </div>
+    <div class="problem-card">
+      <div class="problem-num">02</div>
+      <div class="problem-title">A live review panel on the right</div>
+      <div class="problem-desc">As the conversation fills in a task, every field appears in a review panel with validation, so the operator eyeballs the whole thing before it's ever submitted.</div>
+    </div>
+    <div class="problem-card">
+      <div class="problem-num">03</div>
+      <div class="problem-title">Tasks &amp; history on the left</div>
+      <div class="problem-desc">Their tasks grouped by status and their past conversations, so a task and the chat that created it stay linked but distinct.</div>
+    </div>
   </div>
 </div>
 
@@ -43,11 +66,12 @@
 <div class="cs-section">
   <div class="s-label">What I own</div>
   <div class="s-title">Defining the product as the only non-engineering voice</div>
+
   <div class="grid-2 mt16">
     <div class="sol-card">
-      <div class="sol-tag">Scope &amp; requirements</div>
-      <div class="sol-title">Deciding what "done" means</div>
-      <div class="sol-desc">Sole PM defining scope, requirements, and written exit conditions for a from-scratch product, on a team with no dedicated designer or QA. Features ship in small slices, each with an agreed exit bar before work starts.</div>
+      <div class="sol-tag">Product &amp; architecture</div>
+      <div class="sol-title">The skill-based model</div>
+      <div class="sol-desc">Defined the skill-based approach that makes a new channel mostly configuration rather than net-new code, and the shared validation every skill inherits so no channel can quietly produce a bad task. This is the whole efficiency thesis, so getting the boundary of a "skill" right matters.</div>
     </div>
 
     <div class="sol-card ai">
@@ -55,41 +79,41 @@
         Safety
         <span class="tag-ai">✦ Human / AI boundary</span>
       </div>
-      <div class="sol-title">Guardrails for a tool that can trigger real sends</div>
-      <div class="sol-desc">Owned the rules for where the assistant must not guess, where it has to show inferred vs. confirmed values, and a mandatory human-approval gate before anything is sent. The cost of a wrong send is real, so the boundary is explicit.</div>
+      <div class="sol-title">What the bot may never guess</div>
+      <div class="sol-desc">Owned the rules for what the assistant is allowed to infer versus what it must never guess, and governance around high-risk fields, including traceability between bot-inferred and human-stated values. A mandatory human-approval step gates every send; the assistant's job ends at "task set up and submitted."</div>
     </div>
 
     <div class="sol-card">
-      <div class="sol-tag">Trade-offs</div>
-      <div class="sol-title">Sequencing and architecture calls</div>
-      <div class="sol-desc">Made and documented product trade-offs with engineering, including resequencing the roadmap to take on a harder notification queue earlier, and a two-environment split that balances build speed against the risk of sending from the wrong place.</div>
+      <div class="sol-tag">Scope &amp; requirements</div>
+      <div class="sol-title">Deciding what "done" means</div>
+      <div class="sol-desc">Sole PM defining scope, requirements, and exit conditions on a team with no designer and no QA. Work ships in small slices, each with an agreed bar for when it's good enough to move on rather than a judgement call made in the moment.</div>
     </div>
 
     <div class="sol-card">
-      <div class="sol-tag">Stakeholders</div>
-      <div class="sol-title">Framing decisions for leadership</div>
-      <div class="sol-desc">Presented roadmap, risks, and open trade-offs to cross-functional leads through structured async decks, laying out options with explicit pros and cons rather than pre-baked recommendations.</div>
+      <div class="sol-tag">Alignment</div>
+      <div class="sol-title">Framing trade-offs for leadership</div>
+      <div class="sol-desc">Surfaced foundational gaps mid-build and drove them to locked decisions, and took roadmap, risks, and open trade-offs to leadership as options with explicit pros and cons rather than pre-baked recommendations.</div>
     </div>
   </div>
 </div>
 
-<!-- How the squad works -->
+<!-- Ways of working -->
 <div class="cs-section">
-  <div class="s-label">How we work</div>
-  <div class="s-title">An AI-native squad, and the process to keep it honest</div>
+  <div class="s-label">Ways of working</div>
+  <div class="s-title">A waterfall-free model, and the process to keep it honest</div>
   <div class="s-body">
-    <p>The team runs lean and fast: features shipping daily, a single daily working session in place of standups and sprints, and very little heavyweight documentation. That speed is the point, but it creates its own risks, mostly around review capacity and losing the record of <em>why</em> decisions were made.</p>
-    <p>So I built light process to match. A dated decision register captures engineering calls and their rationale, replacing an ad hoc chat log that didn't scale past two people. I also spec'd an internal chat-ops assistant that adds state and search on top of our bug and improvement log, with a two-key close control (engineer fixes, PM verifies) to preserve a quality check even without a QA function.</p>
+    <p>With one engineer and me, we co-designed a deliberately lean operating model. No PRDs, no tech-design cycle, no tickets, no sprints. Direction is set at kickoff, and detail gets worked out while building through a daily plan → build → test loop. In place of formal docs we keep two lightweight shared artifacts: a living requirements doc that captures the conversation paths and the product logic the model may never guess, and an improvement log where bugs and enhancements are prioritised and closed (engineer marks a fix done, PM verifies before it closes, preserving a quality gate without a QA function).</p>
+    <p>Speed is the point of the model, but I stay explicit about its trade-offs: more AI-generated output than two people can fully review, and little record of <em>why</em> a decision was made. So the process I built is aimed squarely at those two risks, capturing decisions and their rationale as we go, and agreeing up front what "done enough" means for each slice.</p>
   </div>
 </div>
 
 <!-- Where it's at -->
 <div class="cs-section">
   <div class="s-label">Where it's at</div>
-  <div class="s-title">Phase 1 in internal testing</div>
+  <div class="s-title">First phase, in internal testing</div>
   <div class="s-body">
-    <p>I planned and ran the project's first live internal usability test with a regional PM. The session surfaced a critical bug and validated real demand for bulk task creation, which fed directly back into roadmap sequencing discussions with leadership.</p>
-    <p>It's still early. The work now is widening the exit bar from "works in test" to "works across the full environment chain," and designing for bulk, multi-item use up front rather than retrofitting it later. I'll add more here as the project matures.</p>
+    <p>The first phase proves the conversational model end-to-end on the simplest notification type, covering both single-task and batch (mass) creation, with more phases planned from there. I planned and ran the project's first live internal test with a regional PM, which surfaced a critical bug and validated real demand for creating tasks in bulk, both of which fed straight back into sequencing discussions.</p>
+    <p>It's still early and still in build. This page stays intentionally high level because the product is internal; I'll add more as it matures.</p>
   </div>
 </div>
 
